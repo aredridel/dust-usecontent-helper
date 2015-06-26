@@ -4,12 +4,19 @@
   "description": "A dust helper to load i18n content at render time",
   "main": "index.js",
   "scripts": {
+    "cover": "nyc report --reporter=lcov",
     "test": "nyc tap test/*.js && nyc report",
-    "cover": "nyc report --reporter=lcov"
+    "prepublish": "amdify -e index.js -o index.amd.js"
   },
   "author": "Aria Stewart <ariastewart@paypal.com>",
   "license": "Apache-2.0",
+  "browserPackage": {
+    "files": [
+      "index.amd.js"
+    ]
+  },
   "devDependencies": {
+    "@aredridel/amdify": "0.0.26",
     "dust-message-helper": "^3.0.0",
     "dustjs-linkedin": "~2.7.1",
     "nyc": "^2.3.0",
