@@ -27,3 +27,5 @@ Icon?
 Thumbs.db
 
 test/fixtures/out
+
+index.*.js
